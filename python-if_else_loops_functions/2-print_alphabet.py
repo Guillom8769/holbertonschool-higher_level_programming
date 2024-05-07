@@ -5,4 +5,3 @@ ascii_code_of_z = 123  # ASCII code for 'z' + 1 to include 'z' in the range
 
 for ascii_code in range(ascii_code_of_a, ascii_code_of_z):
     print(chr(ascii_code), end='')
-    
