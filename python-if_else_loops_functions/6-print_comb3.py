@@ -1,4 +1,8 @@
 #!/usr/bin/python3
-for i in range(10):
-    for j in range(i + 1, 10):
-        print(f"{i}{j}", end=", " if j < 9 or i < 8 else "\n")
+
+for number in range(0, 90):
+    if number % 10 > number / 10:
+        if number != 89:
+            print("{:02d}, ".format(number), end="")
+        else:
+            print("{:02d}".format(number))
