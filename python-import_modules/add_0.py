@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 def add(a, b):
-    """Fonction qui additionne deux entiers et retourne leur somme.
+    """My addition function
 
     Args:
-        a (int): Premier entier.
-        b (int): Deuxième entier.
+        a: first integer
+        b: second integer
 
     Returns:
-        int: La somme de `a` et `b`.
+        The return value. a + b
     """
-    return a + b
+    return (a + b)
