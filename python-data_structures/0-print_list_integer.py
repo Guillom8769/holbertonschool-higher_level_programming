@@ -3,7 +3,6 @@
 def print_list_integer(my_list=[]):
     """
     Prints all integers from a list, one per line.
-    
     Args:
     my_list (list): A list of integers.
     """
