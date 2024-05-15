@@ -8,7 +8,6 @@ def list_division(my_list_1, my_list_2, list_length):
     :return: A new list with the result of the divisions
     """
     result_list = []
-    
     for i in range(list_length):
         try:
             # Essayer de diviser les éléments correspondants des deux listes
@@ -24,5 +23,4 @@ def list_division(my_list_1, my_list_2, list_length):
             result = 0
         finally:
             result_list.append(result)
-    
     return result_list
