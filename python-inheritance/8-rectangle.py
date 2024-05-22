@@ -15,7 +15,8 @@ class Rectangle(BaseGeometry):
 
     def __init__(self, width, height):
         """
-        Initializes the Rectangle with width and height, validated by BaseGeometry.
+        Initializes the Rectangle with width and height,
+          validated by BaseGeometry.
 
         Args:
             width (int): The width of the rectangle.
