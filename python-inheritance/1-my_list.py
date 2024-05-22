@@ -1,17 +1,17 @@
 #!/usr/bin/python3
-class MyList(list):
-    """
-    Classe qui hérite de la classe list et ajoute une méthode pour
-    imprimer la liste triée.
 
-    Méthodes:
-        print_sorted(self): Imprime la liste triée en ordre croissant.
-    """
+"""
+Class that inherits from list
+"""
+
+
+class MyList(list):
+    """class that inherits from list"""
+
     def print_sorted(self):
         """
-        Imprime la liste triée en ordre croissant.
-
-        La méthode utilise la fonction sorted() pour trier la liste
-        sans modifier la liste originale.
+        prints list in ascending sort
         """
-        print(sorted(self))
+        sort_list = super().copy()
+        sort_list.sort()
+        print(sort_list)
