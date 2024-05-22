@@ -1,0 +1,48 @@
+The ``1-my_list`` module
+=========================
+
+Using ``MyList``
+----------------
+
+Importing the class from the module:
+    >>> MyList = __import__('1-my_list').MyList
+
+Creating an instance of MyList and adding elements:
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+
+Printing the original list:
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+Printing the sorted list:
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+Ensuring the original list is unchanged:
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+Adding more elements and printing sorted list again:
+    >>> my_list.append(0)
+    >>> my_list.append(6)
+    >>> my_list.print_sorted()
+    [0, 1, 2, 3, 4, 5, 6]
+
+Ensuring the original list is unchanged:
+    >>> print(my_list)
+    [1, 4, 2, 3, 5, 0, 6]
+
+Testing with all negative numbers:
+    >>> neg_list = MyList([-1, -4, -2, -3, -5])
+    >>> neg_list.print_sorted()
+    [-5, -4, -3, -2, -1]
+
+Testing with mixed positive and negative numbers:
+    >>> mixed_list = MyList([3, -1, 2, -3, 1, -2, 0])
+    >>> mixed_list.print_sorted()
+    [-3, -2, -1, 0, 1, 2, 3]
