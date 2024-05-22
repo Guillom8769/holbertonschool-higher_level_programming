@@ -2,8 +2,8 @@
 """
 Module 7-rectangle
 Ce module fournit une classe `Rectangle` qui définit un rectangle
-avec des attributs privés pour la largeur et la hauteur,ainsi
-que des méthodes pour calculer l'aire, le périmètre et des
+avec des attributs privés pour la largeur et la hauteur,
+ainsi que des méthodes pour calculer l'aire, le périmètre et des
 représentations sous forme de chaîne de caractères.
 """
 
@@ -12,24 +12,25 @@ class Rectangle:
     """
     Classe qui définit un rectangle par :
     - des attributs privés pour la largeur (width) et la hauteur (height)
-    - des propriétés pour accéder et modifier ces attributs avec des
-    vérifications
+    - des propriétés pour accéder et modifier ces attributs avec
+      des vérifications
     - des méthodes pour calculer l'aire (area), le périmètre (perimeter)
     - des méthodes pour afficher le rectangle en utilisant `print()`,
       `str()` et `repr()`
-    - une méthode pour afficher un message lors de la suppression de
-      l'objet
+    - une méthode pour afficher un message lors de la suppression
+      de l'objet
     - des attributs de classe pour suivre le nombre d'instances et
       personnaliser le symbole de représentation
     """
 
-    # Attributs de classe
     number_of_instances = 0
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """Initialisation des attributs width et height, et
-          incremente number_of_instances"""
+        """
+        Initialisation des attributs width et height, et incrémente
+        number_of_instances
+        """
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
@@ -81,12 +82,14 @@ class Rectangle:
     def __str__(self):
         """
         Retourne une chaîne de caractères représentant le rectangle
-          avec le caractère(s) défini dans print_symbol
+        avec le caractère(s) défini dans print_symbol
         """
-        if self.__width == 0 ou self.__height == 0:
+        if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join([str(self.print_symbol) *
-                          self.__width for _ in range(self.__height)])
+        rect_lines = [
+            str(self.print_symbol) * self.__width for _ in range(self.__height)
+        ]
+        return "\n".join(rect_lines)
 
     def __repr__(self):
         """
@@ -96,7 +99,9 @@ class Rectangle:
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        """Affiche un message lors de la suppression de l'objet Rectangle et
-          décrémente number_of_instances"""
+        """
+        Affiche un message lors de la suppression de l'objet Rectangle
+        et décrémente number_of_instances
+        """
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
