@@ -147,6 +147,42 @@ Value Errors
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [ValueError] distance must be greater than 0
 
+    >>> try:
+    ...     bg.integer_validator("negative", -1)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [ValueError] negative must be greater than 0
+
+    >>> try:
+    ...     bg.integer_validator("zero", 0)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [ValueError] zero must be greater than 0
+
+    >>> try:
+    ...     bg.integer_validator("negative_large", -999999)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [ValueError] negative_large must be greater than 0
+
+    >>> try:
+    ...     bg.integer_validator("tiny", -0.1)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] tiny must be an integer
+
+    >>> try:
+    ...     bg.integer_validator("decimal", 0.1)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] decimal must be an integer
+
+    >>> try:
+    ...     bg.integer_validator("large_negative", -9999999999999)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [ValueError] large_negative must be greater than 0
+
 
 General Errors
 ==============
@@ -156,3 +192,15 @@ General Errors
     ... except Exception as e:
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [Exception] area() is not implemented
+
+    >>> try:
+    ...     bg.integer_validator("example", "text")
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] example must be an integer
+
+    >>> try:
+    ...     bg.integer_validator("example", -1)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [ValueError] example must be greater than 0
