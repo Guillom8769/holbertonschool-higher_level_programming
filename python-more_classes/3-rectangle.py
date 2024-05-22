@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """
-Module 3-rectangle
+Module 4-rectangle
 Ce module fournit une classe `Rectangle` qui définit un rectangle avec
-des attributs privés pour la largeur et la hauteur,
-ainsi que des méthodes pour calculer l'aire, le périmètre
-et des représentations sous forme de chaîne de caractères.
+des attributs privés pour la largeur et la hauteur,ainsi que des méthodes
+pour calculer l'aire, le périmètre et des représentations sous forme de
+chaîne de caractères.
 """
 
 
@@ -15,7 +15,8 @@ class Rectangle:
     - des propriétés pour accéder et modifier ces attributs avec des
     vérifications
     - des méthodes pour calculer l'aire (area), le périmètre (perimeter)
-    - des méthodes pour afficher le rectangle en utilisant `print()` et `str()`
+    - des méthodes pour afficher le rectangle en utilisant `print()`,
+     str()` et `repr()`
     """
 
     def __init__(self, width=0, height=0):
@@ -75,9 +76,3 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         return "\n".join(["#" * self.__width for _ in range(self.__height)])
-
-    def __repr__(self):
-        """
-        Retourne une chaîne de caractères représentant l'objet Rectangle
-        """
-        return f"Rectangle({self.__width}, {self.__height})"
