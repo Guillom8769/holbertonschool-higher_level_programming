@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  db:
+    image: mysql:8.0.25
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"  # Utilisation du port 3307 sur l'hôte
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
