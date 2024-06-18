@@ -2,11 +2,9 @@ version: '3.8'
 
 services:
   db:
-    image: mysql:8.0.25
+    build: .
     environment:
       MYSQL_ROOT_PASSWORD: root
     ports:
       - "3307:3306"
-    volumes:
-      - ./my.cnf:/etc/mysql/conf.d/my.cnf
     command: --default-authentication-plugin=mysql_native_password
